@@ -126,6 +126,9 @@ body:not(.home) main{padding-top:var(--navh)}
 .btn-access.primary:hover{background:var(--cobalt-bright)}
 .btn-access.luma{background:transparent; color:var(--silver); border-color:var(--line-d)}
 .btn-access.luma:hover{border-color:var(--cobalt-bright); color:var(--cobalt-bright)}
+.btn-access.ig{background:transparent; color:var(--silver); border-color:var(--line-d); gap:.45rem}
+.btn-access.ig svg{flex-shrink:0}
+.btn-access.ig:hover{border-color:var(--cobalt-bright); color:var(--cobalt-bright)}
 .btn-access:focus-visible{outline:2px solid var(--cobalt-bright); outline-offset:2px}
 @media (max-width:600px){
   .access-tag{display:none}
@@ -369,9 +372,8 @@ footer{background:var(--ink); color:var(--silver); padding:clamp(3rem,8vh,5rem) 
 </style>
 </head>
 <body class="lang-es home">
-<!-- ═══════════════ ACCESOS · ACTUALIZAR EN CADA ENCUENTRO — SOLO ESTOS DOS LINKS ═══════════════ -->
+<!-- ═══════════════ ACCESOS · ACTUALIZAR EN CADA ENCUENTRO — SOLO ESTE LINK ═══════════════ -->
 <script>
-  window.ENTRADAS = "https://forms.gle/z96Y9Tzs5y6N6fq69"; // formulario de entradas del próximo encuentro
   window.LUMA     = "https://luma.com/s3a0xecv";           // evento en Luma del próximo encuentro
 </script>
 <!-- ══════════════════════════════════════════════════════════════════════════════════════════════ -->
@@ -396,8 +398,8 @@ footer{background:var(--ink); color:var(--silver); padding:clamp(3rem,8vh,5rem) 
   <div class="access-inner">
     <span class="access-tag"><span class="es">Próximo encuentro</span><span class="en">Next encounter</span></span>
     <div class="access-btns">
-      <a class="btn-access primary js-entradas" href="#" target="_blank" rel="noopener"><span class="es">Conseguir entrada</span><span class="en">Get ticket</span></a>
       <a class="btn-access luma js-luma" href="#" target="_blank" rel="noopener"><span class="es">Ver en Luma</span><span class="en">View on Luma</span></a>
+      <a class="btn-access ig" href="https://instagram.com/ciclofricciones" target="_blank" rel="noopener" aria-label="Instagram @ciclofricciones"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"></circle></svg>Instagram</a>
     </div>
   </div>
 </div>
@@ -703,7 +705,6 @@ footer{background:var(--ink); color:var(--silver); padding:clamp(3rem,8vh,5rem) 
       <p class="eyebrow"><span class="es">Accesos</span><span class="en">Access</span></p>
       <h3 class="foot-access-title"><span class="es">Sumate al próximo encuentro</span><span class="en">Join the next encounter</span></h3>
       <div class="access-btns big">
-        <a class="btn-access primary big js-entradas" href="#" target="_blank" rel="noopener"><span class="es">Conseguir entrada</span><span class="en">Get ticket</span></a>
         <a class="btn-access luma big js-luma" href="#" target="_blank" rel="noopener"><span class="es">Ver en Luma</span><span class="en">View on Luma</span></a>
       </div>
     </div>
@@ -761,10 +762,9 @@ footer{background:var(--ink); color:var(--silver); padding:clamp(3rem,8vh,5rem) 
     el.setAttribute('aria-label', t);
   });
 
-  // ---- Accesos: aplica los links de window.ENTRADAS / window.LUMA a todos los botones ----
+  // ---- Accesos: aplica el link de window.LUMA a los botones ----
   (function(){
-    var ent = window.ENTRADAS, lum = window.LUMA;
-    if(ent) document.querySelectorAll('.js-entradas').forEach(function(a){ a.href = ent; });
+    var lum = window.LUMA;
     if(lum) document.querySelectorAll('.js-luma').forEach(function(a){ a.href = lum; });
   })();
 
